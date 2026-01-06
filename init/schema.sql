@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS 'users' (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL
+)
+
+CREATE TABLE IF NOT EXISTS 'pedidos' (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    descricao TEXT NOT NULL,
+    data DATE,
+    user_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+)
